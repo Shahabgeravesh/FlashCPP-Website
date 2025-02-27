@@ -199,6 +199,10 @@ footer {
     .feature-card:hover {
         transform: none;
     }
+    
+    .app-store-badge {
+        width: 160px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -255,6 +259,10 @@ footer {
         background: rgba(26, 26, 26, 0.8);
         box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
+    
+    .app-store-badge {
+        filter: brightness(2) hue-rotate(215deg) saturate(90%);
+    }
 }
 
 /* Performance optimizations */
@@ -298,4 +306,22 @@ html {
 .cta-button:focus {
     outline: none;
     box-shadow: 0 0 0 3px rgba(0,122,255,0.3);
+}
+
+.app-store-link {
+    display: inline-block;
+    transition: transform 0.2s ease;
+    margin: 2rem 0;
+}
+
+.app-store-badge {
+    width: 180px;
+    height: auto;
+    margin: 0;
+    filter: brightness(1.1) hue-rotate(215deg) saturate(90%);
+}
+
+.app-store-link:hover {
+    transform: scale(1.05);
+    opacity: 0.85;
 }
