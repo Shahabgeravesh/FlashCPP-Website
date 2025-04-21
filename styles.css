@@ -111,6 +111,7 @@ p {
     font-size: 3rem;
     margin-bottom: 1.5rem;
     color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .hero .subtitle {
@@ -197,11 +198,11 @@ footer {
 
 @media (max-width: 768px) {
     h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
     
     .hero .subtitle {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
     
     .hero-stats {
@@ -237,15 +238,19 @@ footer {
 
 @media (max-width: 480px) {
     h1 {
-        font-size: 1.8rem;
-    }
-    
-    .feature-card {
-        padding: 1.5rem;
-    }
-    
-    .price {
         font-size: 2rem;
+    }
+    
+    .hero .subtitle {
+        font-size: 1rem;
+    }
+    
+    .stat {
+        padding: 0.5rem 1rem;
+    }
+    
+    .app-store-badge {
+        width: 140px;
     }
 }
 
@@ -430,14 +435,15 @@ html {
 
 .app-store-link {
     display: inline-block;
-    transition: transform 0.2s ease;
     margin: 2rem 0;
+    transition: transform 0.3s ease;
 }
 
 .app-store-badge {
-    max-width: 180px;
+    width: 180px;
     height: auto;
-    transition: transform var(--transition-speed);
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
 }
 
 .app-store-badge:hover {
@@ -457,7 +463,8 @@ html {
     padding: 1rem 2rem;
     border-radius: 1rem;
     backdrop-filter: blur(10px);
-    transition: transform var(--transition-speed);
+    -webkit-backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
 }
 
 .stat:hover {

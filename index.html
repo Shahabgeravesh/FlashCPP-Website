@@ -121,13 +121,15 @@
     <link rel="preload" href="script.js" as="script">
     <link rel="preload" href="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" as="image">
     
-    <!-- Favicons -->
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <!-- iOS icons -->
     <link rel="apple-touch-icon" href="apple-touch-icon.svg">
     <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180x180.png">
     <link rel="apple-touch-icon" sizes="167x167" href="apple-touch-icon-167x167.png">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="manifest" href="site.webmanifest">
     
     <!-- iOS splash screens -->
@@ -206,6 +208,29 @@
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
+        }
+        
+        .app-store-badge {
+            width: 180px;
+            height: auto;
+            transition: transform 0.3s ease;
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+        }
+        
+        .app-store-badge:hover {
+            transform: scale(1.05);
+        }
+        
+        @media (max-width: 768px) {
+            .app-store-badge {
+                width: 160px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .app-store-badge {
+                width: 140px;
+            }
         }
     </style>
     
