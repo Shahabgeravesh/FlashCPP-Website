@@ -1,7 +1,7 @@
 {
     "name": "FlashCPP",
     "short_name": "FlashCPP",
-    "description": "Master your ASIS CPP certification exam with FlashCPP - the #1 rated study tool",
+    "description": "Master your ASIS CPP certification with FlashCPP - the #1 rated study tool",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#ffffff",

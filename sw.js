@@ -1,4 +1,4 @@
-const CACHE_NAME = 'flashcpp-cache-v1';
+const CACHE_NAME = 'flashcpp-v1';
 const ASSETS_TO_CACHE = [
     '/',
     '/index.html',
@@ -8,8 +8,7 @@ const ASSETS_TO_CACHE = [
     '/favicon-16x16.png',
     '/apple-touch-icon.png',
     '/site.webmanifest',
-    'https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg',
-    'https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg'
+    'https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg'
 ];
 
 // Install Service Worker
@@ -18,9 +17,6 @@ self.addEventListener('install', (event) => {
         caches.open(CACHE_NAME)
             .then((cache) => {
                 return cache.addAll(ASSETS_TO_CACHE);
-            })
-            .then(() => {
-                return self.skipWaiting();
             })
     );
 });
@@ -44,33 +40,6 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
     event.respondWith(
         caches.match(event.request)
-            .then((response) => {
-                // Cache hit - return response
-                if (response) {
-                    return response;
-                }
-
-                // Clone the request
-                const fetchRequest = event.request.clone();
-
-                return fetch(fetchRequest).then(
-                    (response) => {
-                        // Check if we received a valid response
-                        if (!response || response.status !== 200 || response.type !== 'basic') {
-                            return response;
-                        }
-
-                        // Clone the response
-                        const responseToCache = response.clone();
-
-                        caches.open(CACHE_NAME)
-                            .then((cache) => {
-                                cache.put(event.request, responseToCache);
-                            });
-
-                        return response;
-                    }
-                );
-            })
+            .then((response) => response || fetch(event.request))
     );
 }); 
