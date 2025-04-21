@@ -178,20 +178,36 @@ body {
     left: 0;
 }
 
-/* App Store Badge */
-.app-store-link {
-    display: inline-block;
+/* App Store Button */
+.app-store-button {
+    display: inline-flex;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+    border-radius: 6px;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
     margin: 2rem 0;
     transition: var(--transition);
-}
-
-.app-store-link:hover {
-    transform: scale(1.05);
-}
-
-.app-store-badge {
     width: 200px;
-    height: auto;
+    justify-content: center;
+}
+
+.app-store-button:hover {
+    transform: scale(1.05);
+    background-color: #333;
+}
+
+.app-store-icon {
+    margin-right: 8px;
+    font-size: 24px;
+}
+
+.app-store-text {
+    line-height: 1.2;
 }
 
 /* Footer */
@@ -245,7 +261,7 @@ footer {
         color: black;
     }
     
-    .app-store-link {
+    .app-store-button {
         display: none;
     }
 }
